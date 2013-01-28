@@ -26,7 +26,6 @@ Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
 Bundle 'croaky/vim-colors-github'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'nanki/treetop.vim'
 Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-cucumber'
@@ -41,6 +40,7 @@ Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
+Bundle 'flazz/vim-colorschemes'
 
 filetype plugin indent on
 
@@ -78,7 +78,8 @@ if executable("ack")
 endif
 
 " Color scheme
-colorscheme github
+colorscheme jellybeans
+set background=dark
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
