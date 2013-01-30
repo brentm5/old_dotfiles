@@ -41,6 +41,7 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 

@@ -10,6 +10,7 @@ alias -g G='| grep'
 alias -g M='| less'
 alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
+alias c="cd ~/Dropbox/code"
 
 # git
 alias g="git"
@@ -20,7 +21,7 @@ alias b="bundle"
 alias bundleit="bundle --binstubs=bin/stubs"
 
 # Tests and Specs
-alias t="ruby -I test"
+alias spec="bundle exec rspec"
 alias cuc="bundle exec cucumber"
 
 # Rubygems
@@ -31,5 +32,3 @@ alias giv="gem install -v"
 alias migrate="rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:prepare"
 alias m="migrate"
 alias rk="rake"
-alias s="rspec"
-alias z="zeus"
