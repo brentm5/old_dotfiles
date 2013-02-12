@@ -1,13 +1,22 @@
+autoload -U compinit && compinit
+autoload -U colors && colors
+
+fpath=(~/.zsh/functions/* $fpath)
+
+#autoload -U ~/.zsh/functions/*(:t)
+
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
-for function in ~/.zsh/functions/*; do
-  source $function
-done
+# keep TONS of history
+HISTFILE=~/.zsh_history
+HISTSIZE=4096
+SAVEHIST=1000
+REPORTTIME=10
 
-# completion
-autoload -U compinit
-compinit
+setopt APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt INC_APPEND_HISTORY SHARE_HISTORY
 
 # automatically enter directories without cd
 setopt auto_cd
@@ -21,34 +30,28 @@ if [ -e "$HOME/.aliases" ]; then
 fi
 
 # vi mode
-bindkey -v
-bindkey "^F" vi-cmd-mode
-bindkey jj vi-cmd-mode
+#bindkey -v
+#bindkey "^F" vi-cmd-mode
+#bindkey jj vi-cmd-mode
 
 # use incremental search
-bindkey "^R" history-incremental-search-backward
+#bindkey "^R" history-incremental-search-backward
 
 # add some readline keys back
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
+#bindkey "^A" beginning-of-line
+#bindkey "^E" end-of-line
 
 # handy keybindings
-bindkey "^P" history-search-backward
-bindkey "^Y" accept-and-hold
-bindkey "^N" insert-last-word
-bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+#bindkey "^P" history-search-backward
+#bindkey "^Y" accept-and-hold
+#bindkey "^N" insert-last-word
+#bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 # expand functions in the prompt
 setopt prompt_subst
 
 # prompt
 export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
-
-# ignore duplicate history entries
-setopt histignoredups
-
-# keep TONS of history
-export HISTSIZE=4096
 
 # look for ey config in project dirs
 export EYRC=./.eyrc

@@ -1,5 +1,7 @@
 " Leader
-let mapleader = " "
+let mapleader = ","
+
+source $HOME/.vim/functions.vim
 
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
@@ -41,6 +43,7 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'kikijump/tslime.vim'
 Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
@@ -142,38 +145,38 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 " rspec mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+map <Leader>rr :call RunLastSpec()<CR>
 
-function! RunCurrentSpecFile()
-  if InSpecFile()
-    let l:command = "s " . @% . " -f documentation"
-    call SetLastSpecCommand(l:command)
-    call RunSpecs(l:command)
-  endif
-endfunction
+"function! RunCurrentSpecFile()
+"  if InSpecFile()
+"    let l:command = "s " . @% . " -f documentation"
+"    call SetLastSpecCommand(l:command)
+"    call RunSpecs(l:command)
+"  endif
+"endfunction
 
-function! RunNearestSpec()
-  if InSpecFile()
-    let l:command = "s " . @% . " -l " . line(".") . " -f documentation"
-    call SetLastSpecCommand(l:command)
-    call RunSpecs(l:command)
-  endif
-endfunction
+"function! RunNearestSpec()
+"  if InSpecFile()
+"    let l:command = "s " . @% . " -l " . line(".") . " -f documentation"
+"    call SetLastSpecCommand(l:command)
+"    call RunSpecs(l:command)
+"  endif
+"endfunction
 
-function! RunLastSpec()
-  if exists("t:last_spec_command")
-    call RunSpecs(t:last_spec_command)
-  endif
-endfunction
+"function! RunLastSpec()
+"  if exists("t:last_spec_command")
+"    call RunSpecs(t:last_spec_command)
+"  endif
+"endfunction
 
-function! InSpecFile()
-  return match(expand("%"), "_spec.rb$") != -1
-endfunction
+"function! InSpecFile()
+"  return match(expand("%"), "_spec.rb$") != -1
+"endfunction
 
-function! SetLastSpecCommand(command)
-  let t:last_spec_command = a:command
-endfunction
+"function! SetLastSpecCommand(command)
+"  let t:last_spec_command = a:command
+"endfunction
 
-function! RunSpecs(command)
-  execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
-endfunction
+"function! RunSpecs(command)
+"  execute ":w\|!clear && echo " . a:command . " && echo && " . a:command
+"endfunction
