@@ -7,6 +7,7 @@ git_prompt_info() {
 }
 
 source ~/.rvm/scripts/rvm
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # makes color constants available
 autoload -U colors

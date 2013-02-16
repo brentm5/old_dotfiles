@@ -43,7 +43,7 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'flazz/vim-colorschemes'
-Bundle 'kikijump/tslime.vim'
+Bundle 'vim-scripts/tslime.vim'
 Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
