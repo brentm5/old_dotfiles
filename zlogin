@@ -24,3 +24,6 @@ export PS1='[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{
 
 # load thoughtbot/dotfiles scripts
 export PATH="$HOME/.bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

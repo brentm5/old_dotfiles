@@ -1,0 +1,13 @@
+# ~/.tmuxinator/tag-cloud.yml
+
+project_name: tagcloud
+project_root: ~/Dropbox/code/tag-cloud
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        -
+  - server: foreman start
+  - logs: tail -f log/development.log
+  - console: rails c
