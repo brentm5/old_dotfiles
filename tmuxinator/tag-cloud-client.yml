@@ -1,0 +1,11 @@
+# ~/.tmuxinator/tag-cloud-client.yml
+
+project_name: tagcloudclient
+project_root: ~/Dropbox/code/tag-cloud-client
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        -
+  - console: 
