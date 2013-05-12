@@ -11,3 +11,4 @@ tabs:
   - server: foreman start
   - logs: tail -f log/development.log
   - console: rails c
+  - console:

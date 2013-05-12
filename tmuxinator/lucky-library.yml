@@ -1,0 +1,11 @@
+# ~/.tmuxinator/lucky-library.yml
+
+project_name: lucky-library
+project_root: ~/Dropbox/code/luckycharms-library
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        -
+  - console:
